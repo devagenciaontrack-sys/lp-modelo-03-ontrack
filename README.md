@@ -21,4 +21,4 @@ npm run generate   # site estático em .output/public
 - **GitHub Pages (demonstração):** `LP_BASE=/lp-modelo-03-ontrack/ npm run generate` e publique `.output/public` no branch `gh-pages`.
 
 ## Briefing para o cliente
-PDF com tudo o que precisamos do cliente para montar o site: [baixar o briefing](Briefing-Modelo-03-Jur'idico-e-financeiro.pdf?raw=1)
+PDF com tudo o que precisamos do cliente para montar o site: [baixar o briefing](Briefing-Modelo-03-Juridico-e-financeiro.pdf?raw=1)
