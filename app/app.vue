@@ -38,6 +38,15 @@ const socios = [
   { n: 'Nome Sobrenome', c: 'Sócio', a: 'Contencioso estratégico' },
 ]
 
+const duvidas = [
+  { q: 'A primeira conversa é cobrada?', a: 'A conversa inicial serve para entender o caso e dizer se podemos ajudar. Os honorários, quando houver contratação, são apresentados por escrito antes de qualquer trabalho.', p: 'Seguimos a tabela de honorários da OAB do nosso estado.' },
+  { q: 'O que devo levar para a primeira reunião?', a: 'Documento com foto, contratos, notificações, e-mails ou mensagens ligados ao caso. Se não tiver tudo, traga o que tiver: organizamos juntos.' },
+  { q: 'Quanto tempo leva um processo?', a: 'Depende da área, do tribunal e da fase em que o caso está. Na primeira reunião explicamos as etapas e os prazos prováveis do seu caso.', p: 'Não prometemos prazo nem resultado: a decisão é sempre do Judiciário.' },
+  { q: 'Meu caso fica em sigilo?', a: 'Sim. O sigilo profissional é dever do advogado e vale desde o primeiro contato, inclusive pelo formulário deste site.' },
+  { q: 'Vocês atendem fora da cidade?', a: 'Sim. Reuniões podem ser por videochamada e os processos eletrônicos permitem atuar em todo o país.' },
+  { q: 'Como acompanho o andamento do meu caso?', a: 'Você recebe um resumo a cada movimentação importante e pode marcar uma conversa com o advogado responsável sempre que precisar.' },
+]
+const ordinais = ['1º', '2º', '3º', '4º', '5º', '6º', '7º', '8º', '9º']
 const form = reactive({ nome: '', email: '', mensagem: '' })
 const enviado = ref(false)
 const erro = ref('')
@@ -58,7 +67,7 @@ function enviar() {
     <header class="top">
       <div class="wrap top-in">
         <a href="#" class="logo">{{ site.marca }}<span>{{ site.sufixo }}</span></a>
-        <nav class="nav"><a href="#areas">Áreas</a><a href="#metodo">Como trabalhamos</a><a href="#escritorio">Escritório</a></nav>
+        <nav class="nav"><a href="#areas">Áreas</a><a href="#metodo">Como trabalhamos</a><a href="#escritorio">Escritório</a><a href="#duvidas">Dúvidas</a></nav>
         <a class="btn btn-gold btn-sm" href="#contato">Falar com advogado</a>
       </div>
     </header>
@@ -116,6 +125,22 @@ function enviar() {
           <ul class="selos">
             <li>[Ranking jurídico 0000]</li><li>[Publicação especializada]</li><li>[Prêmio ou certificação]</li><li>[Associação de classe]</li>
           </ul>
+        </div>
+      </section>
+
+      <section id="duvidas" class="sec duvidas">
+        <div class="wrap">
+          <div class="head"><h2>Perguntas frequentes</h2><p>As dúvidas mais comuns de quem procura o escritório pela primeira vez, organizadas como gostamos de trabalhar: com clareza.</p></div>
+          <ol class="artigos">
+            <li v-for="(d, i) in duvidas" :key="d.q" class="artigo">
+              <p class="art-n">Art. {{ ordinais[i] }}</p>
+              <div>
+                <h3>{{ d.q }}</h3>
+                <p>{{ d.a }}</p>
+                <p v-if="d.p" class="paragrafo"><span aria-hidden="true">§ único.</span> {{ d.p }}</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
