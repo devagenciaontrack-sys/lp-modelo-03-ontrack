@@ -64,6 +64,7 @@ function enviar() {
 
 <template>
   <div>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
     <header class="top">
       <div class="wrap top-in">
         <a href="#" class="logo">{{ site.marca }}<span>{{ site.sufixo }}</span></a>
@@ -72,7 +73,7 @@ function enviar() {
       </div>
     </header>
 
-    <main>
+    <main id="conteudo">
       <section class="hero">
         <div class="wrap">
           <p class="eyebrow">Advocacia empresarial e patrimonial</p>
