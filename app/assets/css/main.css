@@ -125,3 +125,6 @@ h1 em{ font-style:italic; color:var(--brass-2); }
   .socio .ph{ aspect-ratio:4/5; padding:8px; } .socio .ph span{ font-size:10.5px; }
   .socio figcaption{ margin-top:0; padding-top:0; border-top:0; }
 }
+
+/* celular: área de toque mínima de 44px */
+@media (max-width:760px){ .logo, .cta .link{ min-height:44px; display:inline-flex; align-items:center; } }
